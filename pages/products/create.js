@@ -4,7 +4,6 @@ const initialState = { name: '', price: 0 }
 function Create() {
     const [product, setProduct] = useState(initialState)
     const handleChange = (e) => {
-        const target = e.target
         const inputValue = e.target.value
         const inputName = e.target.name
 
@@ -21,8 +20,9 @@ function Create() {
             headers: {
                 'Content-Type' : 'application/json'
             },
-            body: JSON.stringify(product)
-        }) .then((res) => res.json())
+            body: JSON.stringify(product),
+        }) 
+        .then((res) => res.json())
            .then((data) => {
             setProduct(initialState)
             console.log('Producto creado con éxito')
@@ -34,11 +34,19 @@ function Create() {
     <>
     <div>
         <h1>
-            <u>Crear nuevo producto</u>
+            <u>Crear nuevo producto 2</u>
         </h1>
         <form>
-            <input type="text" name="name" value={product.name} onChange={handleChange} />
-            <input type="number" name="price" value={product.price} onChange={handleChange}/>
+            <input 
+            type="text" 
+            name="name" 
+            value={product.name} 
+            onChange={handleChange} />
+            <input 
+            type="number" 
+            name="price" 
+            value={product.price} 
+            onChange={handleChange}/>
             <button onClick={handleClick}>Crear producto</button>
         </form>
     </div>
