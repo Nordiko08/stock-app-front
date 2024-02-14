@@ -16,7 +16,7 @@ function Create() {
   const handleClick = (e) => {
     e.preventDefault()
 
-    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/products`, {
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/products/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
